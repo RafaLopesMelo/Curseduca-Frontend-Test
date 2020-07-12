@@ -4,14 +4,14 @@ import { FaArrowRight } from 'react-icons/fa';
 import logo from '../../assets/curseduca.svg';
 import illustration from '../../assets/estudos.svg';
 
-import { Wrapper, Aside, LogoWrapper, Logo, LoginForm, SubmitButton, Main } from './styles';
+import { Wrapper, Aside, LogoWrapper, LoginForm, SubmitButton, Main } from './styles';
 
 const Login: React.FC = () => {
   return (
     <Wrapper>
       <Aside>
         <LogoWrapper>
-          <Logo src={ logo }/>
+          <img alt="Cureseduca Logo" src={ logo }/>
           <h1>Curseduca Social</h1>
         </LogoWrapper>
         <LoginForm>

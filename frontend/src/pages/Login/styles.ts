@@ -18,17 +18,16 @@ export const Aside = styled.aside`
 export const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
-  
+  padding: 4% 0 0 4%;
+
   h1 {
-
+    font-size: 1.8rem
   }
-`
 
-
-export const Logo = styled.img`
-  margin: 4%;
-
-  width: 8%;
+  img {
+    margin-right: 2%;
+    width: 8%;
+  }
 `
 
 export const LoginForm = styled.form`
