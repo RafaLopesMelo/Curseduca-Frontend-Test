@@ -1,7 +1,10 @@
 import React from 'react';
-import logo from '../../assets/curseduca.svg';
+import { FaArrowRight } from 'react-icons/fa';
 
-import { Wrapper, Aside, LogoWrapper, Logo, LoginForm, Main } from './styles';
+import logo from '../../assets/curseduca.svg';
+import illustration from '../../assets/estudos.svg';
+
+import { Wrapper, Aside, LogoWrapper, Logo, LoginForm, SubmitButton, Main } from './styles';
 
 const Login: React.FC = () => {
   return (
@@ -12,13 +15,16 @@ const Login: React.FC = () => {
           <h1>Curseduca Social</h1>
         </LogoWrapper>
         <LoginForm>
-          <h1>Login</h1>
+          <h1>Entrar</h1>
           <input type="text" placeholder="Usuário"/>
           <input type="text" placeholder="Senha"/>
+          <SubmitButton>
+            <FaArrowRight/>
+          </SubmitButton>
         </LoginForm>
       </Aside>
       <Main>
-
+        <img alt="Illustration" src={ illustration } />
       </Main>
     </Wrapper>
   );

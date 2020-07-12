@@ -19,11 +19,11 @@ export const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
   
-
   h1 {
 
   }
 `
+
 
 export const Logo = styled.img`
   margin: 4%;
@@ -38,7 +38,7 @@ export const LoginForm = styled.form`
   justify-content: space-between;
 
   width: 20vw;
-  height: 28%;
+  height: 40%;
 
   margin: auto;
 
@@ -60,9 +60,44 @@ export const LoginForm = styled.form`
   }
 `;
 
+export const SubmitButton = styled.button.attrs({
+  type: 'submit'
+})`
+    width: 20%;
+    height: 16%;
+
+    margin-left: auto;
+
+    background-color: #083b8a;
+    border: 0;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+  &:hover {
+    filter: brightness(98%);
+    transform: scale(0.98);
+  }
+
+  svg {
+    color: #fff;
+
+    font-size: 3rem;
+  }
+`
+
 export const Main = styled.main`
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
   width: 70vw;
   height: 100vh;
 
   background-color: #083b8a;
+
+  img {
+    width: 70%;
+  }
 `
