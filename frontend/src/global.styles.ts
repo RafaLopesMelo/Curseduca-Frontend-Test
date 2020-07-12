@@ -8,6 +8,18 @@ const GlobalStyles = createGlobalStyle`
 
     font-family: 'Roboto';
   }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
 `
 
 export default GlobalStyles;

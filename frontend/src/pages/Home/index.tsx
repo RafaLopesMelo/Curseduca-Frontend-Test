@@ -1,9 +1,10 @@
 import React from 'react';
 
 import NavBar from '../../components/NavBar';
+import Aside from '../../components/Aside';
 import Footer from '../../components/Footer';
 
-import { Wrapper, Main, Aside } from './styles';
+import { Wrapper, Main } from './styles';
 
 const Home: React.FC = () => {
   return (
@@ -12,9 +13,7 @@ const Home: React.FC = () => {
       <Main>
 
       </Main>
-      <Aside>
-
-      </Aside>
+      <Aside />
       <Footer />
     </Wrapper>
   );
