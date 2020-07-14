@@ -33,7 +33,7 @@ export default class Router {
                 const status = 401
                 const message = 'Incorrect email or password'
                 res.status(status).json({ status, message })
-                return
+                return;
             }
 
             const access_token = this.auth.createToken({ email, password })

@@ -31,26 +31,33 @@ export const LogoWrapper = styled.div`
 `
 
 export const LoginForm = styled.form`
-  display: flex;
-  flex-direction: column;
-
-  justify-content: space-between;
-
   width: 20vw;
-  height: 40%;
 
   margin: auto;
 
   h1 {
     font-size: 4rem;
+    margin-bottom: 2vh;
   }
 
-  input {
+  h2 {
+    font-size: 1.4rem;
+    font-weight: normal;
+    text-indent: 2rem;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+    margin: 2vh 0;
+  }
+
+  label input {
+    width: 100%;
     height: 5vh;
 
     font-size: 1.4rem;
     font-weight: bold;
-    text-indent: 5%;
+    text-indent: 4%;
 
     border: 1.5pt solid black;
     border-radius: 10px;
@@ -59,13 +66,30 @@ export const LoginForm = styled.form`
   }
 `;
 
+export const ErrorWrapper = styled.div`
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 8vh;
+
+  background-color: rgba(220, 53, 69, 0.6);
+  border: 1pt solid rgb(220, 53, 69);
+  border-radius: 8px;
+
+  transition-duration: 1s;
+`
+
 export const SubmitButton = styled.button.attrs({
   type: 'submit'
 })`
-    width: 20%;
-    height: 16%;
+    display: block;
 
-    margin-left: auto;
+    width: 4vw;
+    height: 6vh;
+
+    margin: 4% 0 0 auto;
+    
 
     background-color: #083b8a;
     border: 0;

@@ -1,6 +1,5 @@
 import 'dotenv/config';
 import jwt from 'jsonwebtoken'
-import fs from 'fs';
 
 const SECRET_KEY = process.env.SECRET_KEY || 'curseduca-test'
 const expiresIn  = '8h'
@@ -24,7 +23,7 @@ class Auth {
     }
 
     isAuthenticated({ email, password }) {
-        return this.data.find(user => user.email === email && user.password === password)
+        return this.data.some(user => user.email === email && user.password === password)
     }
 
 }

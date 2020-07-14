@@ -9,10 +9,6 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Roboto';
   }
 
-  #root {
-    min-height: 100vh;
-  }
-
   ul {
     list-style: none;
   }

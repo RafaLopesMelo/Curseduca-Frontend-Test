@@ -11,24 +11,32 @@ import { Wrapper, Options } from './styles';
 const Aside = () => {
   return (
     <Wrapper>
-      <img src={ photo } alt="Profile" />
+      <img src={photo} alt="Profile" />
       <Options>
         <ul>
           <li>
-            <GoPencil />
-            Artigos
+            <a href="/home">
+              <GoPencil />
+              Artigos
+            </a>
           </li>
           <li>
-            <MdChatBubble />
-            Pensamentos
+            <a href="/home">
+              <MdChatBubble />
+              Pensamentos
+            </a>
           </li>
           <li>
-            <FaExclamation />
-            Avisos
+            <a href="/home">
+              <FaExclamation />
+              Avisos
+            </a>
           </li>
           <li>
-            <BsBookHalf />
-            Conteúdos
+            <a href="/home">
+              <BsBookHalf />
+              Conteúdos
+            </a>
           </li>
         </ul>
       </Options>

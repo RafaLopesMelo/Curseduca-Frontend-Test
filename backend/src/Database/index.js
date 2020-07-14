@@ -7,7 +7,7 @@ class Database {
     }
 
     getUsers() {
-        if (! this.users) {
+        if (!this.users) {
             this.users = JSON.parse(fs.readFileSync('./src/Database/data/users.json', 'UTF-8'))
         }
         return this.users

@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   padding: 8% 0;
 
   img {
-    width: 70%;
+    width: 50%;
     margin: 4% 0;
   }
 `
@@ -28,8 +28,17 @@ export const Options = styled.div`
     margin: 16% 0;
   }
 
-  li svg {
+  svg {
     font-size: 2rem;
     margin-right: 4%;
+  }
+
+  a {
+    color: #000;
+  }
+
+  a:hover {
+    color: #FF9C00;
+    transform: scale(1.1);
   }
 `
