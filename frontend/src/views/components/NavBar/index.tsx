@@ -9,6 +9,7 @@ import logo from '../../assets/curseduca.svg';
 import { Wrapper, LogoWrapper, IconsWrapper } from './styles';
 
 const NavBar: React.FC = () => {
+
   return (
     <Wrapper>
       <LogoWrapper>

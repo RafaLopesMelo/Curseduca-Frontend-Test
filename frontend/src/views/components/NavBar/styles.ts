@@ -9,14 +9,13 @@ export const Wrapper = styled.div`
 
   padding: 0 24px;
   background-color: var(--primary);
-`
+`;
 
 export const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
 
-  width: 20%;
+  width: 40vw;
   height: 60%;
 
   color: var(--white);
@@ -24,13 +23,13 @@ export const LogoWrapper = styled.div`
 
   img {
     height: 100%;
+    margin: 2%;
   }
-`
+`;
 
 export const IconsWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
 
   width: 12%;
   margin-right: 4%;
@@ -39,10 +38,11 @@ export const IconsWrapper = styled.div`
 
   a {
     color: var(--white);
+    margin-right: 2vw;
   }
 
   a:hover {
     color: var(--secondary);
     transform: scale(1.1);
   }
-`
+`;
