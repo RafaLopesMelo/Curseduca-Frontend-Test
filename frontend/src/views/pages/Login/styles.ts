@@ -91,7 +91,7 @@ export const SubmitButton = styled.button.attrs({
     margin: 4% 0 0 auto;
     
 
-    background-color: #083b8a;
+    background-color: var(--primary);
     border: 0;
     border-radius: 8px;
 
@@ -103,7 +103,7 @@ export const SubmitButton = styled.button.attrs({
   }
 
   svg {
-    color: #fff;
+    color: var(--white);
 
     font-size: 3rem;
   }
@@ -118,7 +118,7 @@ export const Main = styled.main`
   width: 70vw;
   height: 100vh;
 
-  background-color: #083b8a;
+  background-color: var(--primary);
 
   img {
     width: 70%;

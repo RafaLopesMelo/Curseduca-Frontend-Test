@@ -34,11 +34,15 @@ export const Options = styled.div`
   }
 
   a {
-    color: #000;
+    color: var(--black);
+  }
+
+  .active {
+    color: var(--secondary);
   }
 
   a:hover {
-    color: #FF9C00;
-    transform: scale(1.1);
+    color: var(--secondary);
+    filter: brightness(1.2);
   }
 `

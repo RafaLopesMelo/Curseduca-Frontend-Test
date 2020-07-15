@@ -16,8 +16,8 @@ const NavBar: React.FC = () => {
         <h1>Curseduca Social</h1>
       </LogoWrapper>
       <IconsWrapper>
-      <Link to="/home"><AiFillHome /></Link>
-      <Link to="/home"><MdSettings /></Link>
+      <Link to="/posts"><AiFillHome /></Link>
+      <Link to="/posts"><MdSettings /></Link>
       <Link to="/"><FaPowerOff /></Link>
       </IconsWrapper>
     </Wrapper>

@@ -1,16 +1,12 @@
+interface IState {
+  posts: IPost[];
+  users: IUserList;
+}
+
 interface ITokenResponse {
   data: {
     access_token: string;
   }
-}
-
-interface IAction {
-  type: string;
-  payload: Promise<IPost[]>;
-};
-
-interface IHomeProps {
-  fetchPosts: () => IAction;
 };
 
 interface IPost {
@@ -19,5 +15,12 @@ interface IPost {
   text: string;
   id_category: number;
   id_user: number;
+  email_user?: string;
   date: string
 };
+
+interface IUser {
+  id: number,
+  email: string,
+  password: string;
+}

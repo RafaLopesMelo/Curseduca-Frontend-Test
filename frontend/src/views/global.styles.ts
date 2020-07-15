@@ -16,6 +16,13 @@ const GlobalStyles = createGlobalStyle`
   a {
     text-decoration: none;
   }
+
+  :root {
+    --primary: #083b8a;
+    --secondary: #FF9C00;
+    --black: #000;
+    --white: #fff;
+  }
 `
 
 export default GlobalStyles;

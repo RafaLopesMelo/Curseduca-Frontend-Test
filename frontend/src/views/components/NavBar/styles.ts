@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   justify-content: space-between;
 
   padding: 0 24px;
-  background-color: #083b8a;
+  background-color: var(--primary);
 `
 
 export const LogoWrapper = styled.div`
@@ -19,7 +19,7 @@ export const LogoWrapper = styled.div`
   width: 20%;
   height: 60%;
 
-  color: #fff;
+  color: var(--white);
   font-size: 1.4rem;
 
   img {
@@ -38,11 +38,11 @@ export const IconsWrapper = styled.div`
   font-size: 3.6rem;
 
   a {
-    color: #fff;
+    color: var(--white);
   }
 
   a:hover {
-    color: #FF9C00;
+    color: var(--secondary);
     transform: scale(1.1);
   }
 `

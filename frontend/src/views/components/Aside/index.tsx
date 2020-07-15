@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { GoPencil } from 'react-icons/go';
 import { FaExclamation } from 'react-icons/fa';
 import { MdChatBubble } from 'react-icons/md';
@@ -9,34 +10,48 @@ import photo from '../../assets/profileExample.png';
 import { Wrapper, Options } from './styles';
 
 const Aside = () => {
+  const { category } = useParams();
+
   return (
     <Wrapper>
       <img src={photo} alt="Profile" />
       <Options>
         <ul>
           <li>
-            <a href="/home">
+            <Link 
+              to="/posts/1" 
+              className={Number(category) === 1 ? 'active' : ''}
+            >
               <GoPencil />
               Artigos
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/home">
+            <Link 
+              to="/posts/2"
+              className={Number(category) === 2 ? 'active' : ''}
+            >
               <MdChatBubble />
               Pensamentos
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/home">
+            <Link 
+              to="/posts/3"
+              className={Number(category) === 3 ? 'active' : ''}
+            >
               <FaExclamation />
               Avisos
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/home">
+            <Link 
+              to="/posts/4"
+              className={Number(category) === 4 ? 'active' : ''}
+            >
               <BsBookHalf />
               Conteúdos
-            </a>
+            </Link>
           </li>
         </ul>
       </Options>

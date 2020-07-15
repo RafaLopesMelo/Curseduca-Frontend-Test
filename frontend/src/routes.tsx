@@ -9,7 +9,7 @@ const Routes: React.FC = () => {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={ Login }/>
-        <Route path="/home" component={ Home }/>
+        <Route path="/posts/:category?" component={ Home }/>
       </Switch>
     </BrowserRouter>
   );

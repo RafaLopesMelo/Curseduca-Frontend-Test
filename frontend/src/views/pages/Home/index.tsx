@@ -1,40 +1,41 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { BsPlus } from 'react-icons/bs';
+import { useDispatch } from 'react-redux';
+import { useHistory, useParams } from 'react-router-dom';
+
+import { fetchPosts, fetchUsers } from '../../../redux_setup/actions';
 
 import NavBar from '../../components/NavBar';
 import Aside from '../../components/Aside';
 import Footer from '../../components/Footer';
+import PostsFeed from '../../components/PostsFeed';
 
-import { fetchPosts } from './_homeAction';
+import { Wrapper } from './styles';
 
-import { Wrapper, Main, AddPost } from './styles';
+const Home: React.FC = () => {
+  const { category } = useParams();
+  const history = useHistory();
+  const dispatch = useDispatch();
 
-const Home: React.FC<IHomeProps> = ({ fetchPosts }) => {
   useEffect(() => {
-    fetchPosts();
-  }, [fetchPosts]);
+    fetchPosts(category)
+    .then(action => dispatch(action))
+    .catch(() => history.push('/'))
+  }, [category, dispatch, history])
+
+  useEffect(() => {
+    fetchUsers()
+    .then(action => dispatch(action))
+    .catch(() => history.push('/'));
+  })
 
   return (
     <Wrapper>
       <NavBar />
-      <Main>
-        <AddPost>
-          <Link to="/home">
-            <h1>Adicionar Postagem</h1>
-            <BsPlus />
-          </Link>
-        </AddPost>
-      </Main>
+      <PostsFeed />
       <Aside />
       <Footer />
     </Wrapper>
   );
 };
 
-const mapStateToProps = (state: any) => {
-  return { posts: state.posts};
-};
-
-export default connect(mapStateToProps, { fetchPosts })(Home);
+export default Home;
