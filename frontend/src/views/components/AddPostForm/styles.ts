@@ -20,7 +20,7 @@ export const Wrapper = styled.form`
   }
 
   .wrapper {
-    font-size: 2rem;
+    font-size: 2.8rem;
   };
 
   .toolbar {
@@ -56,7 +56,7 @@ export const InputsWrapper = styled.div`
   width: 100%;
 
   * {
-    font-size: 2rem;
+    font-size: 2.8rem;
     text-indent: 1rem;
     border-radius: 12px;
   }
@@ -72,7 +72,7 @@ export const InputsWrapper = styled.div`
 export const ButtonsWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 
   width: 100%;
 
