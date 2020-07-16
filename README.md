@@ -5,7 +5,19 @@
 ## 📚 Introdução
 Este é um repositório com projeto para o processo seletivo da Curseduca. Nele era necessário construir uma mini rede social com algumas ações pré-determinadas.
 
-OBS: Ilustrações feitas por mim mesmo no Adobe Illustrator
+OBS: Ilustrações feitas por mim mesmo no Adobe Illustrato
+
+## 🖨 Screenshots
+
+![Login](https://user-images.githubusercontent.com/60680170/87716866-d79a1a80-c785-11ea-9c9f-40bc211350fa.PNG)
+
+---
+
+![Home](https://user-images.githubusercontent.com/60680170/87716929-f9939d00-c785-11ea-9eb8-ee4d8c7b6111.png)
+
+---
+
+![Adicionar Post](https://user-images.githubusercontent.com/60680170/87716892-e5e83680-c785-11ea-89d0-16fbe975464f.png)
 
 ## 🎸 Tecnologias utilizadas:
 
@@ -20,18 +32,6 @@ OBS: Ilustrações feitas por mim mesmo no Adobe Illustrator
     - React Redux (Integração Redux com React) 
 - Styled Components (Biblioteca para estilização em escopo local/global com JS/TS)
 - Axios (Biblioteca para realização de chamadas HTTP)
-
-## 🖨 Screenshots
-
-![Login](https://user-images.githubusercontent.com/60680170/87716866-d79a1a80-c785-11ea-9c9f-40bc211350fa.PNG)
-
----
-
-![Home](https://user-images.githubusercontent.com/60680170/87716929-f9939d00-c785-11ea-9eb8-ee4d8c7b6111.png)
-
----
-
-![Adicionar Post](https://user-images.githubusercontent.com/60680170/87716892-e5e83680-c785-11ea-89d0-16fbe975464f.png)
 
 ## 💾 Começando
 
