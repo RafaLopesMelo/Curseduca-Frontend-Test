@@ -2,82 +2,71 @@
 
 # Teste de Dev FrontEnd
 
-## Introdução
-Este é um repositório utilizado para os testes em processos seletivos de desenvolvedores(as) front-end do [Curseduca](https://curseduca.com).
+## 📚 Introdução
+Este é um repositório com projeto para o processo seletivo da Curseduca. Nele era necessário construir uma mini rede social com algumas ações pré-determinadas.
 
-## Especificação
-Criar um recurso simples de CRUD de postagens em um mural, similar ao existente em algumas redes sociais, consumindo uma API em JSON.
+OBS: Ilustrações feitas por mim mesmo no Adobe Illustrator
 
-- Cadastro de postagem
-    - Campos
-        - **Título**: campo texto
-        - **Categoria**: campo _select_
-        - **Conteúdo**: campo com editor WYSIWYG
-    - Ações
-        - Agendar
-            - Perguntar ao usuário para quando ele quer agendar a postagem desse conteúdo
-        - Postar agora
-- Listagem de postagens
-    - Buscar as postagens na API e exibi-las para o usuário
-    - Ter uma opção para apagar uma postagem
-    - Criar sistema de filtragem
-        - Por Autor
-        - Por Categoria
+## 🎸 Tecnologias utilizadas:
 
-## Instruções
-- É **necessário** o uso de ReactJS e Redux
-- É **permitido** o uso de outras bibliotecas que te auxiliem no desenvolvimento _(ex: consumo de API, componentes prontos de UI, editor WYSIWYG etc)_
+### - Linguagem: TypeScript
 
+- React (Bibliteca para criação de interfaces)
+    - React Router DOM (Biblioteca para gerenciamento de rotas no React)
+    - React Draft WYSIWYG (Editor WYSIWYG para React utilizando DraftJS)
+        - HTML to Draft/Draft to HTMl (Biblioteca para manipulação de tipos dentro do editor WYSIWYG)
+    - React Icons (Biblioteca de ícones para React)
+- Redux (Gerenciador de estados para aplicações JS/TS)
+    - React Redux (Integração Redux com React) 
+- Styled Components (Biblioteca para estilização em escopo local/global com JS/TS)
+- Axios (Biblioteca para realização de chamadas HTTP)
 
-- **O que estamos buscando?**
-    - Alguma metodologia para definição e organização do seu código CSS
-    - Alguma metodologia para definição e organização dos seus componentes
-    - Estética agradável e layout responsivo
-        - Tenha cuidado e refinamento para entregar uma _interface_ bonita _(se necessário, utilize UI toolkits prontas)_
-    - Boa usabilidade
-        - Pense na experiência do usuário e exiba mensagens de confirmação, erro e sucesso, indicadores de carregamento etc
-    - As instruções de como rodar o projeto
-        - Recebemos muitos testes sem instruções de como configurá-lo, não cometa esse erro! 
-    - Estrutura, legibilidade e manutenibilidade do seu código
-        - Organize-o de uma forma que facilite intervenções futuras _(ex: necessidade de adicionar novos campos, filtros, ações)_
+## 🖨 Screenshots
 
+![Login](https://user-images.githubusercontent.com/60680170/87716866-d79a1a80-c785-11ea-9c9f-40bc211350fa.PNG)
 
-- **O que nos impressionaria?**
-    - Código escrito em TypeScript
-    - Utilização de design patterns
-    - Código _mobile-first_
-    - Utilização de abordagens de acessibilidade
-    - Componentização e extensibilidade dos componentes
-        - Tenha em mente que alguns desses componentes poderiam ser reutilizados no resto de seu sistema
+---
 
+![Home](https://user-images.githubusercontent.com/60680170/87716929-f9939d00-c785-11ea-9eb8-ee4d8c7b6111.png)
 
-- **O que nós não gostaríamos de ver?**
-    - Encontrar códigos não utilizados comentados em sua aplicação
-    - Encontrar muitas dependências não utilizadas em sua aplicação
+---
 
-## API
-### Instalação
-Para rodar a API localmente, siga as instruções abaixo:
+![Adicionar Post](https://user-images.githubusercontent.com/60680170/87716892-e5e83680-c785-11ea-89d0-16fbe975464f.png)
 
-1. Faça o fork [deste repositório](https://github.com/curseduca/curseduca-frontend-react-test) e crie o seu projeto a partir dele
-2. Clone seu próprio repositório
-3. Inicie a instalação das dependências do projeto excutando `npm install`
-    - Caso seja necessário, execute: `npm audit fix` _(o próprio npm irá te instruir a fazer isso)_
-4. Se precisar alterar as informações padrões do servidor, copie o arquivo **.env.example** para **.env** e altere seus valores
-    - O endereço padrão é: `http://localhost:3000`
-5. Execute o comando `npm run serve` para rodar o servidor
+## 💾 Começando
 
-### Uso
-1. Busque um access token através do endpoint `GET /auth/login` informando o email e senha do usuário
-    - Eles estão localizados em [src/Database/data/users.json](https://github.com/curseduca/curseduca-frontend-react-test/blob/master/src/Database/data/users.json)
-2. Utilize o token em todas as requisições seguintes através do cabeçalho `Authorization: Bearer <TOKEN>`
+### Antes de prosseguir, certifique-se que possui o NodeJS e NPM/Yarn instalados em sua máquina
 
-### Endpoints 
-- `GET /users`
-- `GET /posts`
-- `POST /posts`
-- `DELETE /posts/<id>`
-- `GET /categories`
+Primeiro passo para testar o projeto é clonando-o na máquina local com o seguinte comando: 
 
-## Como entrego meu teste?
-Envie um email [vagas@curseduca.com](vagas@curseduca.com) com o link para seu repositório
+```
+$ git clone https://github.com/RafaLopesMelo/Curseduca-Frontend-Test.git
+```
+
+Após isto, acesse a pasta "backend", instale todas as dependências e inicie o servidor na porta 3333 com os comandos:
+
+```
+$ yarn install
+$ yarn serve
+// ou
+$ npm install
+$ npm run serve
+```
+
+Depois adentre a pasta "frontend", instale as dependências e inicie o projeto React:
+
+```
+$ yarn install
+$ yarn start
+```
+
+Note que é preferível rodar o projeto com Yarn por conta do arquivo yarn.lock, caso prefira utilizar npm, apague o yarn.lock e rode os comandos:
+
+```
+$ npm intall
+$ npm run start
+```
+
+Tudo pronto para testar!
+
+OBS: O E-mail e a senha possíveis para Login estão no Placeholder dos inputs 
