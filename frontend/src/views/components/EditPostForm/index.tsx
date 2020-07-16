@@ -1,45 +1,45 @@
 import React, { useState, useRef, FormEvent } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Editor } from 'react-draft-wysiwyg';
-import { convertToRaw, EditorState } from 'draft-js';
+import { convertToRaw, EditorState, ContentState } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
+import htmltoDraft from 'html-to-draftjs';
 
-
-import { createPost } from '../../../redux_setup/actions';
+import { updatePost } from '../../../redux_setup/actions';
 
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 import { Wrapper, InputsWrapper, ButtonsWrapper } from './styles';
 
-const AddPostForm: React.FC = () => {
+const EditPostForm: React.FC = () => {
   const history = useHistory();
 
-  const users: IUser[] = useSelector((state: IState) => state.users);
+  const { id_post } = useParams();
+  const posts: IPost[] = useSelector((state: IState) => state.posts);
 
   const titleInputRef = useRef<HTMLInputElement>(null);
   const categoryInputRef = useRef<HTMLSelectElement>(null);
 
-  const [ editorState, setEditorState ] = useState(EditorState.createEmpty())
+  const post = posts.find(post => post.id === Number(id_post));
+  const { contentBlocks, entityMap } = htmltoDraft(post!.text);
+  const contentState = ContentState.createFromBlockArray(contentBlocks, entityMap);
+  
+  const [ editorState, setEditorState ] = useState(EditorState.createWithContent(contentState));
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
 
-    const userEmail = localStorage.getItem('user_email');
-    const [{ id }] = users.filter(user => user.email === userEmail);
-
     const rawEditorContent = convertToRaw(editorState.getCurrentContent());
 
-    const title = titleInputRef.current!.value;
-    const category = Number(categoryInputRef.current!.value);
-    const text = draftToHtml(rawEditorContent);
+    const data = {
+      id: id_post,
+      title: titleInputRef.current!.value,
+      id_category: Number(categoryInputRef.current!.value),
+      text: draftToHtml(rawEditorContent)
+    }
 
-    createPost({
-      title,
-      text,
-      id_user: id,
-      id_category: category
-    })
+    updatePost(data)
     .then(() => history.push('/posts'))
     .catch(() => history.push('/'));
   }
@@ -48,8 +48,8 @@ const AddPostForm: React.FC = () => {
     <Wrapper>
       <h1>Publicar postagem</h1>
       <InputsWrapper>
-        <input ref={titleInputRef} type="text" />
-        <select ref={categoryInputRef} placeholder="Categoria">
+        <input ref={titleInputRef} value={post?.title} type="text" />
+        <select ref={categoryInputRef} value={post?.id_category} placeholder="Categoria">
           <option value="1">Artigo</option>
           <option value="2">Pensamento</option>
           <option value="3">Aviso</option>
@@ -73,4 +73,4 @@ const AddPostForm: React.FC = () => {
   );
 };
 
-export default AddPostForm;
+export default EditPostForm;

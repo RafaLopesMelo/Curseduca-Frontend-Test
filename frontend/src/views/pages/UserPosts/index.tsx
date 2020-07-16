@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
-import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { BsPlus } from 'react-icons/bs';
+import { useHistory, useParams, useLocation } from 'react-router-dom';
 
 import { fetchPosts, fetchUsers } from '../../../redux_setup/actions';
 
@@ -10,37 +9,32 @@ import Aside from '../../components/Aside';
 import Footer from '../../components/Footer';
 import PostsFeed from '../../components/PostsFeed';
 
-import { Wrapper, FeedWrapper, AddPost } from './styles';
+import { Wrapper, FeedWrapper } from './styles';
 
-const Home: React.FC = () => {
-  const history = useHistory();
-  const dispatch = useDispatch();
+const UserPosts: React.FC = () => {
   const query = new URLSearchParams(useLocation().search)
   const category = query.get('id_category') as string
+  const { id_user } = useParams();
+  const history = useHistory();
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchPosts(category)
-      .then(action => dispatch(action))
-      .catch(() => history.push('/'))
-  }, [category, dispatch, history])
+    fetchPosts(category, id_user)
+    .then(action => dispatch(action))
+    .catch(() => history.push('/'))
+  }, [category, id_user, dispatch, history])
 
   useEffect(() => {
     fetchUsers()
-      .then(action => dispatch(action))
-      .catch(() => history.push('/'));
+    .then(action => dispatch(action))
+    .catch(() => history.push('/'));
   })
 
   return (
     <Wrapper>
       <NavBar />
       <FeedWrapper>
-        <AddPost>
-          <Link to="/add">
-            <h1>Adicionar Postagem</h1>
-            <BsPlus />
-          </Link>
-        </AddPost>
-      <PostsFeed />
+        <PostsFeed />
       </FeedWrapper>
       <Aside />
       <Footer />
@@ -48,4 +42,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default UserPosts;

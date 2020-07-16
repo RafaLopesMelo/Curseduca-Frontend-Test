@@ -7,15 +7,16 @@ import AddPostForm from '../../components/AddPostForm';
 
 import { Wrapper } from './styles';
 
-const AddPost: React.FC = () => {
+const AddPosts: React.FC = () => {
+
   return (
     <Wrapper>
       <NavBar />
-      <AddPostForm />
+        <AddPostForm />
       <Aside />
       <Footer />
     </Wrapper>
   );
 };
 
-export default AddPost;
+export default AddPosts;

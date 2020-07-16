@@ -11,46 +11,12 @@ export const Wrapper = styled.div`
   padding: 8% 8%;
 `
 
-export const AddPost = styled.div`
-  margin-bottom: 6vh;
-
-  width: 80%;
-
-  font-size: 1.4rem;
-  
-  svg {
-    font-size: 3.8rem;
-    transition-duration: 1s;
-  }
-
-  a {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    color: var(--black);
-
-    transition-duration: 1s;
-  }
-
-  a:hover, a:hover svg {
-    color: var(--secondary);
-    transform: scale(1.05);
-  }
-
-  a:hover svg {
-    transform: rotate(225deg);
-  }
-`
 
 export const PostWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
   padding: 2%;
-
-  width: 80%;
-
   margin-bottom: 4vh;
 
   border-radius: 12px;
@@ -126,6 +92,6 @@ export const Options = styled.div`
   }
 
   svg:last-child {
-    color: rgb(220, 53, 69);
+    color: var(--danger);
   };
 `

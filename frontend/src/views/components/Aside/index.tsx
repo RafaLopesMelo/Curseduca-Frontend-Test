@@ -19,7 +19,7 @@ const Aside = () => {
         <ul>
           <li>
             <Link 
-              to="/posts/1" 
+              to={location => `${location.pathname}?id_category=1`}
               className={Number(category) === 1 ? 'active' : ''}
             >
               <GoPencil />
@@ -28,7 +28,7 @@ const Aside = () => {
           </li>
           <li>
             <Link 
-              to="/posts/2"
+              to={location => `${location.pathname}?id_category=2`}
               className={Number(category) === 2 ? 'active' : ''}
             >
               <MdChatBubble />
@@ -37,7 +37,7 @@ const Aside = () => {
           </li>
           <li>
             <Link 
-              to="/posts/3"
+              to={location => `${location.pathname}?id_category=3`}
               className={Number(category) === 3 ? 'active' : ''}
             >
               <FaExclamation />
@@ -46,7 +46,7 @@ const Aside = () => {
           </li>
           <li>
             <Link 
-              to="/posts/4"
+              to={location => `${location.pathname}?id_category=4`}
               className={Number(category) === 4 ? 'active' : ''}
             >
               <BsBookHalf />

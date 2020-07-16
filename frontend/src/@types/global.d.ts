@@ -23,4 +23,18 @@ interface IUser {
   id: number,
   email: string,
   password: string;
-}
+};
+
+interface ICreatePostArgs {
+  title: string;
+  text: string;
+  id_category: number;
+  id_user: number;
+};
+
+interface IUpdatePostArgs {
+  title: string;
+  text: string;
+  id_category: number;
+  id: number;
+};

@@ -1,16 +1,18 @@
-import { fetchPosts, removePost } from './postsActions';
+import { fetchPosts, createPost, updatePost, removePost } from './postsActions';
 import { fetchUsers } from './usersActions';
-import { 
+import {
   FETCH_POSTS,
   REMOVE_POST,
   FETCH_USERS 
 } from './types';
 
-export { 
+export {
   fetchUsers,
   FETCH_USERS,
   fetchPosts,
   FETCH_POSTS,
+  createPost,
+  updatePost,
   removePost,
   REMOVE_POST
 };

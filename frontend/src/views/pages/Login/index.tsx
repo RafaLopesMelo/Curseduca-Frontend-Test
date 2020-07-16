@@ -29,12 +29,14 @@ const Login: React.FC = () => {
     e.preventDefault();
 
     try {
+
       const response: ITokenResponse = await api.post('/auth/login', {
         email: emailInputRef.current?.value,
         password: passwordInputRef.current?.value
       });
 
       localStorage.setItem('token', response.data.access_token);
+      localStorage.setItem('user_email', emailInputRef.current!.value);
       history.push('/posts');
     } catch {
       setHasError(true);

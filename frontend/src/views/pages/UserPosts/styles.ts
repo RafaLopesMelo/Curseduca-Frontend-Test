@@ -20,34 +20,3 @@ export const FeedWrapper = styled.div`
 
   padding: 8% 8%;
 `
-
-export const AddPost = styled.div`
-
-  width: 80%;
-
-  font-size: 1.4rem;
-  
-  svg {
-    font-size: 3.8rem;
-    transition-duration: 1s;
-  }
-
-  a {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    color: var(--black);
-
-    transition-duration: 1s;
-  }
-
-  a:hover, a:hover svg {
-    color: var(--secondary);
-    transform: scale(1.05);
-  }
-
-  a:hover svg {
-    transform: rotate(225deg);
-  }
-`

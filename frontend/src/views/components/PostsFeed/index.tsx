@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { BsPlus } from 'react-icons/bs';
+import { Link, useHistory } from 'react-router-dom';
+
 import { FiTrash2 } from 'react-icons/fi';
 import { MdModeEdit } from 'react-icons/md';
 
@@ -9,7 +9,6 @@ import { removePost } from '../../../redux_setup/actions';
 
 import { 
   Wrapper,
-  AddPost,
   PostWrapper,
   Header,
   User,
@@ -20,36 +19,27 @@ import {
 import photo from '../../assets/profileExample.png';
 
 const PostsFeed: React.FC = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
 
   const posts: IPost[] = useSelector((state: IState) => state.posts);
   const users: IUser[] = useSelector((state: IState) => state.users);
 
   posts.forEach(post => {
-    const user = users.find(user => user.id === post.id);
+    const user = users.find(user => user.id === post.id_user);
     post.email_user = user?.email;
   });
 
   function handleRemovePost(id: number) {
-    console.log(posts)
-
     removePost(id)
     .then(action => {
       dispatch(action)
-      console.log(posts)
     })
     .catch()
-
   };
 
   return (
     <Wrapper>
-      <AddPost>
-        <Link to="/posts">
-          <h1>Adicionar Postagem</h1>
-          <BsPlus />
-        </Link>
-      </AddPost>
       {posts.map(post => (
         <PostWrapper key={post.id}>
           <Header>
@@ -64,7 +54,7 @@ const PostsFeed: React.FC = () => {
             <div dangerouslySetInnerHTML={{ __html: post.text }}></div>
           </Text>
           <Options>
-            <MdModeEdit />
+            <MdModeEdit onClick={() => history.push(`/edit/${post.id}`)}/>
             <FiTrash2 onClick={() => handleRemovePost(post.id)}/>
           </Options>
         </PostWrapper>
