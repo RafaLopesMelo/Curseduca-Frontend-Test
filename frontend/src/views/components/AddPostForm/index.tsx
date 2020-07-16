@@ -33,14 +33,20 @@ const AddPostForm: React.FC = () => {
     const category = Number(categoryInputRef.current!.value);
     const text = draftToHtml(rawEditorContent);
 
-    createPost({
-      title,
-      text,
-      id_user: id,
-      id_category: category
-    })
-    .then(() => history.push('/posts'))
-    .catch(() => history.push('/'));
+    if(!title) {
+      titleInputRef.current!.style.borderColor = 'var(--danger)'
+    }
+
+    if(title!=='' && category && text!=='') {
+      createPost({
+        title,
+        text,
+        id_user: id,
+        id_category: category
+      })
+      .then(() => history.push('/posts'))
+      .catch(() => history.push('/'));
+    }
   }
 
   return (

@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
+import { fetchUsers } from '../../../redux_setup/actions';
 
 import NavBar from '../../components/NavBar';
 import Aside from '../../components/Aside';
@@ -8,6 +12,14 @@ import AddPostForm from '../../components/AddPostForm';
 import { Wrapper } from './styles';
 
 const AddPosts: React.FC = () => {
+  const dispatch = useDispatch()
+  const history = useHistory()
+
+  useEffect(() => {
+    fetchUsers()
+    .then(action => dispatch(action))
+    .catch(() => history.push('/'))
+  })
 
   return (
     <Wrapper>
