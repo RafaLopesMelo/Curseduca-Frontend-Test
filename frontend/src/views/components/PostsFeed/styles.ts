@@ -30,7 +30,7 @@ export const Header = styled.header`
   justify-content: space-between;
 
   p {
-    font-size: 1.2rem;
+    font-size: 2.1rem;
   }
 `
 
@@ -51,7 +51,7 @@ export const User = styled.div`
     color: var(--black);
 
     font-weight: bold;
-    font-size: 1.4rem
+    font-size: 2.8rem
   }
 
   a:hover {
@@ -62,21 +62,25 @@ export const User = styled.div`
 export const Text = styled.div`
   padding: 4% 0 4% 8%;
 
+  max-width: 80%;
+
   h2 {
-    font-size: 2.2rem;
+    font-size: 5rem;
   }
 
   div {
     margin-top: 2%;
-    font-size: 1.4rem;
+    font-size: 2.8rem;
   }
 `
 
 export const Options = styled.div`
   display: flex;
+  justify-content: flex-end;
 
-  font-size: 2rem;
-  margin-left: auto;
+  width: 100%;
+
+  font-size: 2.8rem;
 
   svg {
     margin-left: 2vw;

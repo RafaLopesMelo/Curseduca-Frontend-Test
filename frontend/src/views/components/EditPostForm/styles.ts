@@ -14,13 +14,13 @@ export const Wrapper = styled.form`
   padding: 8% 8%;
 
   h1 {
-    font-size: 3rem;
+    font-size: 5rem;
 
     margin: 0 auto 6vh 0;
   }
 
   .wrapper {
-    font-size: 2rem;
+    font-size: 2.8rem;
   };
 
   .toolbar {
@@ -30,13 +30,22 @@ export const Wrapper = styled.form`
 
   .editor {
     overflow-y: hidden;
-    min-height: 20vh;
-
+    height: 20vh;
     text-indent: 1rem;
 
     border: 1.5pt solid var(--black);
     border-radius: 12px;
   };
+
+  @media(max-width: 800px) {
+    .toolbar {
+      display: none;
+    }
+
+    .editor {
+      margin-top: 2vh;
+    }
+  }
 `
 
 export const InputsWrapper = styled.div`
@@ -46,7 +55,7 @@ export const InputsWrapper = styled.div`
   width: 100%;
 
   * {
-    font-size: 2rem;
+    font-size: 2.8rem;
     text-indent: 1rem;
     border-radius: 12px;
   }
@@ -62,12 +71,12 @@ export const InputsWrapper = styled.div`
 export const ButtonsWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 
   width: 100%;
 
   button {
-    font-size: 2rem;
+    font-size: 3.7rem;
 
     color: var(--white);
     background-color: var(--primary);

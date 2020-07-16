@@ -7,7 +7,8 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  padding: 0 24px;
+  padding: 2vw;
+
   background-color: var(--primary);
 `;
 
@@ -15,15 +16,15 @@ export const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
 
-  width: 40vw;
+  width: 80vw;
   height: 60%;
 
   color: var(--white);
-  font-size: 1.4rem;
+  font-size: 2.1rem;
 
   img {
-    height: 100%;
-    margin: 2%;
+    height: 8.9rem;
+    margin-right: 2%;
   }
 `;
 
@@ -31,14 +32,11 @@ export const IconsWrapper = styled.div`
   display: flex;
   align-items: center;
 
-  width: 12%;
-  margin-right: 4%;
-
-  font-size: 3.6rem;
+  font-size: 5rem;
 
   a {
     color: var(--white);
-    margin-right: 2vw;
+    margin: 1vw;
   }
 
   a:hover {

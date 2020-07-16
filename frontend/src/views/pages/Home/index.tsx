@@ -33,6 +33,7 @@ const Home: React.FC = () => {
   return (
     <Wrapper>
       <NavBar />
+      <Aside />
       <FeedWrapper>
         <AddPost>
           <Link to="/add">
@@ -42,7 +43,6 @@ const Home: React.FC = () => {
         </AddPost>
       <PostsFeed />
       </FeedWrapper>
-      <Aside />
       <Footer />
     </Wrapper>
   );

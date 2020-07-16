@@ -34,6 +34,12 @@ const GlobalStyles = createGlobalStyle`
     --black: #000;
     --white: #fff;
   }
+
+  @media(max-width: 480px) {
+    html {
+      font-size: 25%;
+    }
+  }
 `
 
 export default GlobalStyles;

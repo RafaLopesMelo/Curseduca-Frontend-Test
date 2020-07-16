@@ -14,7 +14,7 @@ export const Wrapper = styled.form`
   padding: 8% 8%;
 
   h1 {
-    font-size: 3rem;
+    font-size: 5rem;
 
     margin: 0 auto 6vh 0;
   }
@@ -37,6 +37,16 @@ export const Wrapper = styled.form`
     border: 1.5pt solid var(--black);
     border-radius: 12px;
   };
+
+  @media(max-width: 800px) {
+    .toolbar {
+      display: none;
+    }
+
+    .editor {
+      margin-top: 2vh;
+    }
+  } 
 `
 
 export const InputsWrapper = styled.div`

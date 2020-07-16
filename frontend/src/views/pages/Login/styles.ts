@@ -33,7 +33,7 @@ export const LogoWrapper = styled.div`
   }
 `
 
-export const LoginForm = styled.form`
+export const Form = styled.form`
   width: 80%;
 
   margin: auto;
@@ -87,15 +87,13 @@ export const SubmitButton = styled.button.attrs({
 })`
     display: block;
 
-    width: 20%;
-    height: 6vh;
-
     margin: 4% 0 0 auto;
+    padding: 2% 4%;
     
     background-color: var(--primary);
     color: var(--white);
 
-    border: 0;
+    border: 0; 
     border-radius: 8px;
 
     cursor: pointer;

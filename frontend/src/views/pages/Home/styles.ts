@@ -9,6 +9,11 @@ export const Wrapper = styled.div`
                         'footer footer';
 
   min-height: 100vh;
+
+  @media(max-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+  } 
 `
 
 export const FeedWrapper = styled.div`
@@ -25,10 +30,10 @@ export const AddPost = styled.div`
 
   width: 80%;
 
-  font-size: 1.4rem;
+  font-size: 2.1rem;
   
   svg {
-    font-size: 3.8rem;
+    font-size: 5rem;
     transition-duration: 1s;
   }
 

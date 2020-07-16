@@ -12,8 +12,8 @@ const AddPosts: React.FC = () => {
   return (
     <Wrapper>
       <NavBar />
-        <AddPostForm />
       <Aside />
+      <AddPostForm />
       <Footer />
     </Wrapper>
   );

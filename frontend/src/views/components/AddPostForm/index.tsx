@@ -5,7 +5,6 @@ import { Editor } from 'react-draft-wysiwyg';
 import { convertToRaw, EditorState } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
 
-
 import { createPost } from '../../../redux_setup/actions';
 
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
@@ -66,7 +65,6 @@ const AddPostForm: React.FC = () => {
         placeholder="Escreva sua postagem aqui"
       />
       <ButtonsWrapper>
-        <button type="submit">Agendar Postagem</button>
         <button type="submit" onClick={handleSubmit}>Postar agora!</button>
       </ButtonsWrapper>
     </Wrapper>

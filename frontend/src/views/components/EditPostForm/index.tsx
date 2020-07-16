@@ -1,4 +1,4 @@
-import React, { useState, useRef, FormEvent } from 'react';
+import React, { useEffect, useState, useRef, FormEvent } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Editor } from 'react-draft-wysiwyg';
@@ -14,18 +14,20 @@ import { Wrapper, InputsWrapper, ButtonsWrapper } from './styles';
 
 const EditPostForm: React.FC = () => {
   const history = useHistory();
-
   const { id_post } = useParams();
-  const posts: IPost[] = useSelector((state: IState) => state.posts);
 
+  const [ editorState, setEditorState ] = useState(EditorState.createEmpty());
   const titleInputRef = useRef<HTMLInputElement>(null);
   const categoryInputRef = useRef<HTMLSelectElement>(null);
 
-  const post = posts.find(post => post.id === Number(id_post));
-  const { contentBlocks, entityMap } = htmltoDraft(post!.text);
-  const contentState = ContentState.createFromBlockArray(contentBlocks, entityMap);
-  
-  const [ editorState, setEditorState ] = useState(EditorState.createWithContent(contentState));
+  const posts: IPost[] = useSelector((state: IState) => state.posts);
+  const post = posts.find(post => post.id === Number(id_post))
+
+  useEffect(() => {
+    const { contentBlocks, entityMap } = htmltoDraft(post?.text || '');
+    const contentState = ContentState.createFromBlockArray(contentBlocks, entityMap);
+    setEditorState(EditorState.createWithContent(contentState))
+  }, [post])
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -46,7 +48,7 @@ const EditPostForm: React.FC = () => {
 
   return (
     <Wrapper>
-      <h1>Publicar postagem</h1>
+      <h1>Editar postagem</h1>
       <InputsWrapper>
         <input ref={titleInputRef} value={post?.title} type="text" />
         <select ref={categoryInputRef} value={post?.id_category} placeholder="Categoria">
@@ -57,7 +59,7 @@ const EditPostForm: React.FC = () => {
         </select>
       </InputsWrapper>
       <Editor
-        editorState={editorState}
+        editorState={editorState || null}
         onEditorStateChange={editorState => setEditorState(editorState)}
         toolbarOnFocus
         toolbarClassName="toolbar"
@@ -66,8 +68,7 @@ const EditPostForm: React.FC = () => {
         placeholder="Escreva sua postagem aqui"
       />
       <ButtonsWrapper>
-        <button type="submit">Agendar Postagem</button>
-        <button type="submit" onClick={handleSubmit}>Postar agora!</button>
+        <button type="submit" onClick={handleSubmit}>Editar</button>
       </ButtonsWrapper>
     </Wrapper>
   );

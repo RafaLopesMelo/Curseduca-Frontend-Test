@@ -38,3 +38,8 @@ interface IUpdatePostArgs {
   id_category: number;
   id: number;
 };
+
+interface ILoginValidation {
+  email?: string;
+  password?: string;
+}

@@ -9,4 +9,9 @@ export const Wrapper = styled.div`
                         'footer footer';
 
   min-height: 100vh;
+
+  @media(max-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+  } 
 `

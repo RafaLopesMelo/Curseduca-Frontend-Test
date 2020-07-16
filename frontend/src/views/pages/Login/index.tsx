@@ -10,8 +10,8 @@ import illustration from '../../assets/estudos.svg';
 import {
   Wrapper,
   Aside,
+  Form,
   LogoWrapper,
-  LoginForm,
   SubmitButton,
   Main,
   ErrorWrapper
@@ -29,7 +29,6 @@ const Login: React.FC = () => {
     e.preventDefault();
 
     try {
-
       const response: ITokenResponse = await api.post('/auth/login', {
         email: emailInputRef.current?.value,
         password: passwordInputRef.current?.value
@@ -50,7 +49,8 @@ const Login: React.FC = () => {
           <img alt="Cureseduca Logo" src={logo} />
           <h1>Curseduca Social</h1>
         </LogoWrapper>
-        <LoginForm>
+
+        <Form>
           <h1>Entrar</h1>
           {hasError &&
             <ErrorWrapper>
@@ -68,7 +68,7 @@ const Login: React.FC = () => {
           <SubmitButton onClick={handleSubmit}>
             <FaArrowRight />
           </SubmitButton>
-        </LoginForm>
+        </Form>
       </Aside>
       <Main>
         <img alt="Illustration" src={illustration} />
