@@ -1,11 +1,11 @@
 import styled from 'styled-components'; 
 
 export const Wrapper = styled.div`
-  grid-area: navbar;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  height: 12vh;
 
   padding: 2vw;
 

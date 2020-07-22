@@ -1,15 +1,18 @@
 import React, { useEffect } from 'react';
 
+import { ContextProvider } from './components/Context';
 import Routes from '../Routes';
-import GlobalStyles from './global.styles';
+import GlobalStyles from './styles/global.styles';
 
 const App: React.FC = () => {
-  useEffect(() => localStorage.removeItem('token'));
+  // useEffect(() => localStorage.removeItem('token'));
 
   return (
     <>
-      <GlobalStyles />
-      <Routes />
+      <ContextProvider>
+        <GlobalStyles />
+        <Routes />
+      </ContextProvider>
     </>
   );
 };

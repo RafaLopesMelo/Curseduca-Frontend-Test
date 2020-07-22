@@ -1,22 +1,20 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: auto 70vw;
-  grid-template-rows: 12vh auto 8vh;
-  grid-template-areas:  'navbar navbar'
-                        'aside main'
-                        'footer footer';
-
+  display: flex;
+  flex-direction: column;
+  
   min-height: 100vh;
 `
 
-export const FeedWrapper = styled.div`
-  grid-area: main;
+export const MainWrapper = styled.div`
+  display: flex;
+`;
 
+export const FeedWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  padding: 8% 8%;
+  margin: 12vh 0;
 `

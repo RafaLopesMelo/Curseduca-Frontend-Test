@@ -9,7 +9,7 @@ import Aside from '../../components/Aside';
 import Footer from '../../components/Footer';
 import AddPostForm from '../../components/AddPostForm';
 
-import { Wrapper } from './styles';
+import { Wrapper, MainWrapper } from './styles';
 
 const AddPosts: React.FC = () => {
   const dispatch = useDispatch()
@@ -24,8 +24,10 @@ const AddPosts: React.FC = () => {
   return (
     <Wrapper>
       <NavBar />
-      <Aside />
-      <AddPostForm />
+      <MainWrapper>
+        <Aside />
+        <AddPostForm />
+      </MainWrapper>
       <Footer />
     </Wrapper>
   );

@@ -1,26 +1,23 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.form`
-  grid-area: main;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-
-  margin: 0 auto auto auto;
 
   width: 80%;
+  height: 80vh;
 
-  padding: 8% 8%;
+  margin: auto;
 
   h1 {
     font-size: 5rem;
-
-    margin: 0 auto 6vh 0;
+    margin-bottom: 10vh;
   }
 
   .wrapper {
     font-size: 2.8rem;
+    width: 60%;
   };
 
   .toolbar {
@@ -30,20 +27,40 @@ export const Wrapper = styled.form`
 
   .editor {
     overflow-y: hidden;
-    height: 20vh;
+    min-height: 20vh;
+
     text-indent: 1rem;
 
     border: 1.5pt solid var(--black);
     border-radius: 12px;
+
+    background-color: var(--input-background);
+
+    &:hover,
+    &:focus {
+      transition: 0.4s;
+      box-shadow: 0 0 0 6px var(--input-shadow);
+    }
   };
 
-  @media(max-width: 800px) {
-    .toolbar {
-      display: none;
-    }
+  > button {
+    color: var(--white);
+    background-color: var(--primary);
 
-    .editor {
-      margin-top: 2vh;
+    font-size: 2.8rem;
+
+    width: 160px;
+    height: 6vh;
+    margin-top: 12vh;
+
+    border: none;
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+      color: var(--secondary);
     }
   }
 `
@@ -52,7 +69,7 @@ export const InputsWrapper = styled.div`
   display: flex;
   justify-content: space-between;
 
-  width: 100%;
+  width: 60%;
 
   * {
     font-size: 2.8rem;
@@ -60,40 +77,28 @@ export const InputsWrapper = styled.div`
     border-radius: 12px;
   }
 
-  input {
-    width: 60%;
+  > select {
+    background-color: var(--input-background);
+
+    &:hover,
+    &:focus {
+      transition: 0.4s;
+      box-shadow: 0 0 0 6px var(--input-shadow);
+    }
+  }
+
+  > input {
+    width: 40%;
     height: 6vh;
     border-radius: 10px;
+
+    background-color: var(--input-background);
+
+    &:hover,
+    &:focus {
+      transition: 0.4s;
+      box-shadow: 0 0 0 6px var(--input-shadow);
+    }
   }
 
-`
-
-export const ButtonsWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-
-  width: 100%;
-
-  button {
-    font-size: 3.7rem;
-
-    color: var(--white);
-    background-color: var(--primary);
-
-    width: 30%;
-    height: 6vh;
-
-    margin-top: 8vh;
-
-    border: none;
-    border-radius: 12px;
-
-    cursor: pointer;
-  }
-
-  button:hover {
-    transform: scale(1.1);
-    color: var(--secondary);
-  }
 `

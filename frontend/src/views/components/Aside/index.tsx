@@ -1,53 +1,51 @@
-import React from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { GoPencil } from 'react-icons/go';
-import { FaExclamation } from 'react-icons/fa';
-import { MdChatBubble } from 'react-icons/md';
-import { BsBookHalf } from 'react-icons/bs';
+import React, { useContext } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+
+import { AsideMenuContext } from '../Context';
 
 import photo from '../../assets/profileExample.png';
-
-import { Wrapper, Options } from './styles';
+import { Wrapper, Profile, Options } from './styles';
+import { GoPencil, MdChatBubble, FaExclamation, BsBookHalf } from '../../styles/icons';
 
 const Aside = () => {
-  const { category } = useParams();
+  const AsideCtx = useContext(AsideMenuContext);
+  const location = useLocation();
 
   return (
-    <Wrapper>
-      <img src={photo} alt="Profile" />
+    <Wrapper isOpen={AsideCtx.isOpen ? true : false}>
+      <Profile>
+        <img src={photo} alt="Profile" />
+        <h2>Rafael Melo</h2>
+      </Profile>
       <Options>
         <ul>
-          <li>
+          <li className={location.search === '?id_category=1' ? 'active' : ''}>
             <Link 
-              to={location => `${location.pathname}?id_category=1`}
-              className={Number(category) === 1 ? 'active' : ''}
+              to={`${location.pathname}?id_category=1`}      
             >
               <GoPencil />
               Artigos
             </Link>
           </li>
-          <li>
+          <li className={location.search === '?id_category=2' ? 'active' : ''}>
             <Link 
-              to={location => `${location.pathname}?id_category=2`}
-              className={Number(category) === 2 ? 'active' : ''}
+              to={`${location.pathname}?id_category=2`}
             >
               <MdChatBubble />
               Pensamentos
             </Link>
           </li>
-          <li>
+          <li className={location.search === '?id_category=3' ? 'active' : ''}>
             <Link 
-              to={location => `${location.pathname}?id_category=3`}
-              className={Number(category) === 3 ? 'active' : ''}
+              to={`${location.pathname}?id_category=3`}
             >
               <FaExclamation />
               Avisos
             </Link>
           </li>
-          <li>
+          <li className={location.search === '?id_category=4' ? 'active' : ''}>
             <Link 
-              to={location => `${location.pathname}?id_category=4`}
-              className={Number(category) === 4 ? 'active' : ''}
+              to={`${location.pathname}?id_category=4`}  
             >
               <BsBookHalf />
               Conteúdos

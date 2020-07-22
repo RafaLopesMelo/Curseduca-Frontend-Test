@@ -23,11 +23,11 @@ export const LogoWrapper = styled.div`
   align-items: center;
   padding: 4% 0 0 4%;
 
-  h1 {
+  > h1 {
     font-size: 2.8rem
   }
 
-  img {
+  > img {
     margin-right: 2%;
     width: 8%;
   }
@@ -38,29 +38,42 @@ export const Form = styled.form`
 
   margin: auto;
 
-  h1 {
+  > h1 {
     font-size: 6.7rem;
     margin-bottom: 2vh;
   }
 
-  h2 {
+  > div h2 {
     font-size: 2.1rem;
     font-weight: normal;
     text-indent: 2%;
   }
 
-  h3 {
+  > label h3 {
     font-size: 2.8rem;
-    margin: 2vh 0;
+    margin: 12px 0;
   }
 
-  label input {
+  > label input {
     width: 100%;
     height: 5vh;
 
     font-size: 2.1rem;
     font-weight: bold;
     text-indent: 2%;
+
+    border: transparent;
+    border-radius: 10px;
+
+    background-color: var(--input-background);
+
+    transition: 0.2s;
+
+    &:hover,
+    &:focus {
+      transition: 0.4s;
+      box-shadow: 0 0 0 6px var(--input-shadow);
+    }
   }
 `;
 
@@ -77,7 +90,7 @@ export const ErrorWrapper = styled.div`
 
   transition-duration: 1s;
 
-  h2 {
+  > h2 {
     width: 100%;
   }
 `
@@ -97,14 +110,15 @@ export const SubmitButton = styled.button.attrs({
     border-radius: 8px;
 
     cursor: pointer;
+    transition: 0.2s;
 
   &:hover {
     filter: brightness(98%);
-    transform: scale(0.98);
+    transform: scale(0.95);
     color: var(--secondary);
   }
 
-  svg {
+  > svg {
     font-size: 3.7rem;
   }
 `
@@ -120,7 +134,7 @@ export const Main = styled.main`
 
   background-color: var(--primary);
 
-  img {
+  > img {
     width: 70%;
     height: 90%;
   }

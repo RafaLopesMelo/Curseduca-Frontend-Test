@@ -10,7 +10,7 @@ import Aside from '../../components/Aside';
 import Footer from '../../components/Footer';
 import PostsFeed from '../../components/PostsFeed';
 
-import { Wrapper, FeedWrapper, AddPost } from './styles';
+import { Wrapper, MainWrapper, FeedWrapper, AddPost } from './styles';
 
 const Home: React.FC = () => {
   const history = useHistory();
@@ -33,6 +33,7 @@ const Home: React.FC = () => {
   return (
     <Wrapper>
       <NavBar />
+      <MainWrapper>
       <Aside />
       <FeedWrapper>
         <AddPost>
@@ -43,6 +44,7 @@ const Home: React.FC = () => {
         </AddPost>
       <PostsFeed />
       </FeedWrapper>
+      </MainWrapper>
       <Footer />
     </Wrapper>
   );

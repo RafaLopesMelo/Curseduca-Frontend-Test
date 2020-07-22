@@ -9,7 +9,7 @@ import { createPost } from '../../../redux_setup/actions';
 
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
-import { Wrapper, InputsWrapper, ButtonsWrapper } from './styles';
+import { Wrapper, InputsWrapper } from './styles';
 
 const AddPostForm: React.FC = () => {
   const history = useHistory();
@@ -53,7 +53,7 @@ const AddPostForm: React.FC = () => {
     <Wrapper>
       <h1>Publicar postagem</h1>
       <InputsWrapper>
-        <input ref={titleInputRef} type="text" />
+        <input ref={titleInputRef} type="text" placeholder="Título da postagem"/>
         <select ref={categoryInputRef} placeholder="Categoria">
           <option value="1">Artigo</option>
           <option value="2">Pensamento</option>
@@ -70,9 +70,7 @@ const AddPostForm: React.FC = () => {
         editorClassName="editor"
         placeholder="Escreva sua postagem aqui"
       />
-      <ButtonsWrapper>
-        <button type="submit" onClick={handleSubmit}>Postar agora!</button>
-      </ButtonsWrapper>
+      <button type="submit" onClick={handleSubmit}>Postar agora!</button>
     </Wrapper>
   );
 };

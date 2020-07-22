@@ -1,34 +1,27 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: auto 70vw;
-  grid-template-rows: 12vh auto 8vh;
-  grid-template-areas:  'navbar navbar'
-                        'aside main'
-                        'footer footer';
-
+  display: flex;
+  flex-direction: column;
+  
   min-height: 100vh;
-
-  @media(max-width: 1200px) {
-    display: flex;
-    flex-direction: column;
-  } 
 `
 
-export const FeedWrapper = styled.div`
-  grid-area: main;
+export const MainWrapper = styled.div`
+  display: flex;
+`;
 
+export const FeedWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  padding: 8% 8%;
+  margin: 12vh 0;
 `
 
 export const AddPost = styled.div`
-
-  width: 80%;
+  margin-bottom: 8vh;
+  width: 50%;
 
   font-size: 2.1rem;
   

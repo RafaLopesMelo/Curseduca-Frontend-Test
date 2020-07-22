@@ -1,81 +1,89 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
-  grid-area: aside;
+interface Props {
+  isOpen: boolean;
+}
 
+export const Wrapper = styled.div<Props>`
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  padding: 8% 0;
+  width: ${props => props.isOpen === false ? '0' : 'min(100%, 25vw)'};
+  height: 100vh;
 
-  img {
-    width: 50%;
-    margin: 4% 0;
-  }
+  background-color: var(--input-shadow);
 
-  @media(max-width: 1200px) {
-    flex-direction: row;
-  }
-  @media(max-width: 900px) {
-    flex-direction: column;
-  } 
+  position: sticky;
+  top: 0;
+
+  overflow-x: hidden;
+  white-space: nowrap;
+  transition: 1s;
+
+  box-shadow: 5px 0 5px -5px rgba(8, 59, 138, 0.4);
 `
+export const Profile = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > img {
+    width: 50%;
+    margin: 4vh 0;
+  }
+
+  > h2 {
+    font-size: 5rem;
+  }
+`;
 
 export const Options = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
 
   font-weight: bold;
 
+  margin-top: 40%;
+
   width: 100%;
 
-  ul {
+  > ul {
     width: 100%;
-    text-indent: 30%;
-  }
+    text-indent: 8%;
 
-  li {
-    font-size: 3.7rem;
-    margin-top: 4vh;
-  }
+    > li {
+      font-size: 3.7rem;
 
-  svg {
-    font-size: 2.8rem;
-    margin-right: 4%;
-  }
+      &.active{
+        border-left: 2pt solid var(--secondary);
+      }
 
-  a {
-    color: var(--black);
-  }
+      &.active a{
+        color: var(--secondary);
+      }
 
-  .active {
-    color: var(--secondary);
-  }
+      &:hover {
+        border-left: 1pt solid var(--secondary);
+      }
 
-  a:hover {
-    color: var(--secondary);
-    filter: brightness(1.2);
-  }
+      &:hover a {
+        color: var(--secondary);
+        filter: brightness(1.2);
+      }
 
-  @media(max-width: 1200px) {
-    ul {
-      text-indent: 10%;
+      > a {
+        color: var(--black);
+
+        > svg {
+        font-size: 2.8rem;
+        margin-right: 4%;
+        }
+      }
     }
-    li {
-      font-size: 5rem;
+
+    > li + li{
+        margin-top: 6vh;
     }
-    svg {
-      font-size: 5rem;
-    }
-  } 
-  
-  @media(max-width: 900px) {
-    ul {
-      text-indent: 0;
-    }
-    text-align: center;
-  } 
+  }
 `

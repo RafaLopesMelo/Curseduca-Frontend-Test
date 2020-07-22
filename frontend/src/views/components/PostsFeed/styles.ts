@@ -7,17 +7,16 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  padding: 8% 8%;
 `
-
 
 export const PostWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
+  width: 50%;
+
   padding: 2%;
-  margin-bottom: 4vh;
+  margin-bottom: 8vh;
 
   border-radius: 12px;
   border: 1px solid rgba(0,0,0,0.2);

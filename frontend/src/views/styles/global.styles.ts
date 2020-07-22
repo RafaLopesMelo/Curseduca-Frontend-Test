@@ -22,8 +22,6 @@ const GlobalStyles = createGlobalStyle`
   }
 
   input, select, button {
-    border: 1.5pt solid var(--black);
-
     outline: transparent;
   }
 
@@ -33,12 +31,8 @@ const GlobalStyles = createGlobalStyle`
     --danger: #DC3545;
     --black: #000;
     --white: #fff;
-  }
-
-  @media(max-width: 480px) {
-    html {
-      font-size: 25%;
-    }
+    --input-shadow: rgba(8, 59, 138, 0.1);
+    --input-background: rgba(0,0,0, 0.05);
   }
 `
 
