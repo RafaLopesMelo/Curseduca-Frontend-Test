@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { BsPlus } from 'react-icons/bs';
 
+import { BsPlus } from '../../styles/icons';
 import { fetchPosts, fetchUsers } from '../../../redux_setup/actions';
 
 import NavBar from '../../components/NavBar';
 import Aside from '../../components/Aside';
+import InfoMenu from '../../components/InfoMenu';
 import Footer from '../../components/Footer';
 import PostsFeed from '../../components/PostsFeed';
 
@@ -44,6 +45,7 @@ const Home: React.FC = () => {
         </AddPost>
       <PostsFeed />
       </FeedWrapper>
+      <InfoMenu />
       </MainWrapper>
       <Footer />
     </Wrapper>

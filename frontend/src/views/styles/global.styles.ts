@@ -13,6 +13,10 @@ const GlobalStyles = createGlobalStyle`
     font-size: 62.5%;
   }
 
+  body {
+    background-color: #fefefe;
+  }
+
   ul {
     list-style: none;
   }
@@ -28,6 +32,7 @@ const GlobalStyles = createGlobalStyle`
   :root {
     --primary: #083b8a;
     --secondary: #FF9C00;
+    --tertiary: #2BD6EE;
     --danger: #DC3545;
     --black: #000;
     --white: #fff;

@@ -2,9 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 
-import { FiTrash2 } from 'react-icons/fi';
-import { MdModeEdit } from 'react-icons/md';
-
+import { FiTrash2, MdModeEdit } from '../../styles/icons';
 import { removePost } from '../../../redux_setup/actions';
 
 import { 

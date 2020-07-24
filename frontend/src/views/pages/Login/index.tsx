@@ -1,7 +1,7 @@
 import React, { useRef, FormEvent, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { FaArrowRight } from 'react-icons/fa';
 
+import { FaArrowRight } from '../../styles/icons';
 import api from '../../../services/api';
 
 import logo from '../../assets/curseduca.svg';

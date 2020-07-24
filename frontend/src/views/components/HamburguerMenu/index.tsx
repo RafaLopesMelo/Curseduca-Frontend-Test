@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { AsideMenuContext } from '../Context';
 import { Container, MenuToggle, Bar } from './styles';
 
-const HamburguerMenu = () => {
+const HamburguerMenu: React.FC = () => {
   const AsideCtx = useContext(AsideMenuContext);
 
   return (

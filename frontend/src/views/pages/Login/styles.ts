@@ -107,7 +107,7 @@ export const SubmitButton = styled.button.attrs({
     color: var(--white);
 
     border: 0; 
-    border-radius: 8px;
+    border-radius: 12px;
 
     cursor: pointer;
     transition: 0.2s;

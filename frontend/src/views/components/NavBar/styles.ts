@@ -16,8 +16,8 @@ export const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
 
-  width: 80vw;
   height: 60%;
+  white-space: nowrap;
 
   color: var(--white);
   font-size: 2.1rem;

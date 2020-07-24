@@ -14,13 +14,23 @@ export const PostWrapper = styled.div`
   flex-direction: column;
 
   width: 50%;
-
   padding: 2%;
-  margin-bottom: 8vh;
 
-  border-radius: 12px;
-  border: 1px solid rgba(0,0,0,0.2);
-  box-shadow: 10px 15px 10px 0px rgba(0,0,0,0.1);
+  background-color: rgba(0, 0, 0, 0.01);
+
+  &:first-child {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  &:last-child {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  &:not(:first-child) {
+    border-top: 2pt solid rgba(0, 0, 0, 0.04);
+  }
 `
 
 export const Header = styled.header`

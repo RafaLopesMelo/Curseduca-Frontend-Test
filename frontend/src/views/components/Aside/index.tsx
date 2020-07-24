@@ -3,19 +3,24 @@ import { Link, useLocation } from 'react-router-dom';
 
 import { AsideMenuContext } from '../Context';
 
-import photo from '../../assets/profileExample.png';
+import photo from '../../assets/Users/Eu.jpeg';
 import { Wrapper, Profile, Options } from './styles';
 import { GoPencil, MdChatBubble, FaExclamation, BsBookHalf } from '../../styles/icons';
 
-const Aside = () => {
+const Aside: React.FC = () => {
   const AsideCtx = useContext(AsideMenuContext);
   const location = useLocation();
 
   return (
     <Wrapper isOpen={AsideCtx.isOpen ? true : false}>
       <Profile>
-        <img src={photo} alt="Profile" />
+        <div className="image-container">
+          <img src={photo} alt="Profile" />
+        </div>
         <h2>Rafael Melo</h2>
+        <div className="info-container">
+          <p>Seguidores: <strong>324</strong></p> <p>Seguindo: <strong>734</strong></p>
+        </div>
       </Profile>
       <Options>
         <ul>

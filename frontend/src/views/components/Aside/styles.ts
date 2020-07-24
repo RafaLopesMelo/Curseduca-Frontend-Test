@@ -12,7 +12,7 @@ export const Wrapper = styled.div<Props>`
   width: ${props => props.isOpen === false ? '0' : 'min(100%, 25vw)'};
   height: 100vh;
 
-  background-color: var(--input-shadow);
+  background-color: rgba(0, 0, 0, 0.01);
 
   position: sticky;
   top: 0;
@@ -20,17 +20,32 @@ export const Wrapper = styled.div<Props>`
   overflow-x: hidden;
   white-space: nowrap;
   transition: 1s;
+`;
 
-  box-shadow: 5px 0 5px -5px rgba(8, 59, 138, 0.4);
-`
 export const Profile = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  > img {
-    width: 50%;
+  > .image-container {
+    width: 180px;
+    height: 180px;
     margin: 4vh 0;
+
+    > img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+
+  > .info-container {
+    font-size: 22px;
+
+    > p {
+      margin-top: 20px;
+    }
   }
 
   > h2 {
@@ -44,7 +59,7 @@ export const Options = styled.div`
 
   font-weight: bold;
 
-  margin-top: 40%;
+  margin-top: 25%;
 
   width: 100%;
 

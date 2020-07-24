@@ -1,12 +1,12 @@
 import React from 'react';
-import {
-  AiFillFacebook,
-  AiOutlineTwitter,
-  AiFillYoutube,
-  AiFillLinkedin
-} from 'react-icons/ai';
-import { IoLogoWhatsapp } from 'react-icons/io'
 
+import { 
+  IoLogoWhatsapp,
+  AiFillFacebook, 
+  AiOutlineTwitter, 
+  AiFillYoutube,
+  AiFillLinkedin 
+} from '../../styles/icons';
 import { Wrapper, SocialMediasWrapper } from './styles';
 
 const Footer: React.FC = () => {

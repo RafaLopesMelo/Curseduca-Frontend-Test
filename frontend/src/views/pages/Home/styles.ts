@@ -16,7 +16,7 @@ export const FeedWrapper = styled.div`
   flex-direction: column;
   align-items: center;
 
-  margin: 12vh 0;
+  margin: 8vh 0;
 `
 
 export const AddPost = styled.div`

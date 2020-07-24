@@ -6,6 +6,7 @@ import { fetchPosts, fetchUsers } from "../../../redux_setup/actions";
 
 import NavBar from "../../components/NavBar";
 import Aside from "../../components/Aside";
+import InfoMenu from '../../components/InfoMenu';
 import Footer from "../../components/Footer";
 import PostsFeed from "../../components/PostsFeed";
 
@@ -38,6 +39,7 @@ const UserPosts: React.FC = () => {
         <FeedWrapper>
           <PostsFeed />
         </FeedWrapper>
+        <InfoMenu />
       </MainWrapper>
       <Footer />
     </Wrapper>
