@@ -10,6 +10,7 @@ import { createPost } from '../../../redux_setup/actions';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 import { Wrapper, InputsWrapper } from './styles';
+import { FaArrowRight } from '../../styles/icons';
 
 const AddPostForm: React.FC = () => {
   const history = useHistory();
@@ -70,7 +71,7 @@ const AddPostForm: React.FC = () => {
         editorClassName="editor"
         placeholder="Escreva sua postagem aqui"
       />
-      <button type="submit" onClick={handleSubmit}>Postar agora!</button>
+      <button type="submit" onClick={handleSubmit}><FaArrowRight /></button>
     </Wrapper>
   );
 };

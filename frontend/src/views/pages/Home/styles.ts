@@ -9,6 +9,8 @@ export const Wrapper = styled.div`
 
 export const MainWrapper = styled.div`
   display: flex;
+
+  justify-content: space-between;
 `;
 
 export const FeedWrapper = styled.div`
@@ -22,6 +24,7 @@ export const FeedWrapper = styled.div`
 export const AddPost = styled.div`
   margin-bottom: 8vh;
   width: 50%;
+  min-width: 600px;
 
   font-size: 2.1rem;
   

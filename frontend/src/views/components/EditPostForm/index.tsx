@@ -10,6 +10,7 @@ import { updatePost } from '../../../redux_setup/actions';
 
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
+import { FaArrowRight } from '../../styles/icons';
 import { Wrapper, InputsWrapper } from './styles';
 
 const EditPostForm: React.FC = () => {
@@ -67,7 +68,7 @@ const EditPostForm: React.FC = () => {
         editorClassName="editor"
         placeholder="Escreva sua postagem aqui"
       />
-      <button type="submit" onClick={handleSubmit}>Editar</button>
+      <button type="submit" onClick={handleSubmit}><FaArrowRight /></button>
     </Wrapper>
   );
 };

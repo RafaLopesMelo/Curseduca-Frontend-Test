@@ -9,7 +9,7 @@ export const Wrapper = styled.div<Props>`
   flex-direction: column;
   align-items: center;
 
-  width: ${props => props.isOpen === false ? '0' : 'min(100%, 25vw)'};
+  width: ${props => props.isOpen === false ? '0' : '500px'};
   height: 100vh;
 
   background-color: rgba(0, 0, 0, 0.01);

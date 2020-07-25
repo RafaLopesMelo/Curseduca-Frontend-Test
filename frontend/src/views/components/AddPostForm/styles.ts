@@ -44,19 +44,16 @@ export const Wrapper = styled.form`
   };
 
   > button {
-    color: var(--white);
-    background-color: var(--primary);
+    color: var(--primary);
+    background: none;
 
-    font-size: 2.8rem;
-
-    width: 160px;
-    height: 6vh;
-    margin-top: 12vh;
+    font-size: 48px;
+    margin: 12vh 20% 0 auto;
 
     border: none;
-    border-radius: 12px;
-
     cursor: pointer;
+
+    transition-duration: 0.2s;
 
     &:hover {
       transform: scale(1.1);
