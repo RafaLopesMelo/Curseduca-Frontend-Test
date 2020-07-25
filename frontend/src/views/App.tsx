@@ -5,7 +5,7 @@ import Routes from '../Routes';
 import GlobalStyles from './styles/global.styles';
 
 const App: React.FC = () => {
-  // useEffect(() => localStorage.removeItem('token'));
+  useEffect(() => localStorage.removeItem('token'));
 
   return (
     <>
